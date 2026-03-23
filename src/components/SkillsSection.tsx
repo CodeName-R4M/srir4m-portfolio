@@ -17,12 +17,13 @@ const categories = [
   {
     title: "Security / Networking",
     skills: [
-      { name: "CCNA", certified: true },
+      { name: "CCNA", trainingFinished: true },
       { name: "CCNP", inProgress: true },
       "Web Exploitation",
       "Wireshark",
       "Nmap",
       "Linux",
+      { name: "Hidden Protocols", secret: true },
     ],
   },
   {
@@ -37,7 +38,7 @@ const SkillsSection = () => (
       <motion.h2
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.3 }}
         className="text-3xl font-bold mb-10 glitch-hover neon-text-green"
       >
         {">"} Skills
@@ -49,7 +50,7 @@ const SkillsSection = () => (
             key={cat.title}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ delay: ci * 0.05 }}
             className="glass-card rounded-lg p-5"
           >
@@ -58,7 +59,9 @@ const SkillsSection = () => (
               {cat.skills.map((skill) => {
                 const name = typeof skill === "string" ? skill : skill.name;
                 const certified = typeof skill !== "string" && "certified" in skill;
+                const trainingFinished = typeof skill !== "string" && "trainingFinished" in skill;
                 const inProgress = typeof skill !== "string" && "inProgress" in skill;
+                const isSecret = typeof skill !== "string" && "secret" in skill;
 
                 return (
                   <motion.span
@@ -67,14 +70,24 @@ const SkillsSection = () => (
                     className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-medium border transition-all ${
                       certified
                         ? "border-primary/50 text-primary bg-primary/10"
+                        : trainingFinished
+                        ? "border-secondary/50 text-secondary bg-secondary/10"
+                        : isSecret
+                        ? "border-primary/20 text-muted-foreground bg-transparent opacity-40 hover:opacity-100 hover:border-primary/50 hover:text-primary transition-all cursor-help"
                         : "border-border text-foreground bg-muted/30 hover:border-primary/30"
                     }`}
+                    title={isSecret ? "Some secrets are meant to be typed..." : undefined}
                   >
-                    {certified && <ShieldCheck size={12} />}
+                    {(certified || trainingFinished) && <ShieldCheck size={12} />}
                     {name}
                     {certified && (
                       <span className="ml-1 text-[10px] bg-primary/20 text-primary px-1.5 py-0.5 rounded-full">
                         CERTIFIED
+                      </span>
+                    )}
+                    {trainingFinished && (
+                      <span className="ml-1 text-[10px] bg-secondary/20 text-secondary px-1.5 py-0.5 rounded-full">
+                        TRAINING FINISHED
                       </span>
                     )}
                     {inProgress && (

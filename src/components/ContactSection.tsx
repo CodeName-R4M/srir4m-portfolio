@@ -7,7 +7,9 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    window.location.href = `mailto:sriramn20060126@gmail.com?subject=Portfolio Contact from ${form.name}&body=${form.message}%0A%0AFrom: ${form.email}`;
+    const phoneNumber = "918015916569"; // User's WhatsApp number (inferred or placeholder - using common India prefix based on previous context)
+    const text = `*New Portfolio Message*%0A*Name:* ${form.name}%0A*Email:* ${form.email}%0A*Message:* ${form.message}`;
+    window.open(`https://wa.me/${phoneNumber}?text=${text}`, "_blank");
   };
 
   return (
@@ -16,7 +18,7 @@ const ContactSection = () => {
         <motion.h2
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.3 }}
           className="text-3xl font-bold mb-10 glitch-hover neon-text-green"
         >
           {">"} Contact
@@ -26,7 +28,7 @@ const ContactSection = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3 }}
             className="glass-card rounded-lg p-6"
           >
             <p className="text-foreground text-sm mb-6">Let's connect and build something amazing.</p>
@@ -53,7 +55,7 @@ const ContactSection = () => {
           <motion.form
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ delay: 0.1 }}
             onSubmit={handleSubmit}
             className="glass-card rounded-lg p-6 space-y-4"

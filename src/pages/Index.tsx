@@ -9,6 +9,7 @@ import ProjectsSection from "@/components/ProjectsSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import ContactSection from "@/components/ContactSection";
 import VirusShields from "@/components/VirusShields";
+import HackEasterEgg from "@/components/HackEasterEgg";
 
 const Index = () => {
   const [booted, setBooted] = useState(false);
@@ -22,7 +23,8 @@ const Index = () => {
       <MatrixRain />
       <VirusShields />
       <Navbar />
-      <main className="relative z-[5]">
+      <HackEasterEgg />
+      <main className="relative z-[5] pt-20">
         <HeroSection />
         <AboutSection />
         <SkillsSection />
@@ -31,7 +33,7 @@ const Index = () => {
         <ContactSection />
       </main>
       <footer className="relative z-[5] py-6 text-center text-xs text-muted-foreground border-t border-border">
-        <p>© 2024 Sriram N | CodeName-R4M — Built with a hacker's precision</p>
+        <p>© 2026 Sriram N | CodeName-R4M — Built with a hacker's precision</p>
       </footer>
     </div>
   );

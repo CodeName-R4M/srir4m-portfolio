@@ -7,7 +7,7 @@ const AboutSection = () => (
       <motion.h2
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.3 }}
         className="text-3xl font-bold mb-10 glitch-hover neon-text-green"
       >
         {">"} About Me
@@ -17,7 +17,7 @@ const AboutSection = () => (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.3 }}
           className="glass-card rounded-lg p-6"
         >
           <p className="text-sm text-secondary mb-4 font-semibold tracking-wide">PERSONALITY</p>
@@ -28,8 +28,8 @@ const AboutSection = () => (
             <p>🎯 Interests: CTF competitions, web exploitation, self-hosting, infrastructure setup</p>
             <p>📚 Currently learning: CCNP, advanced web exploitation</p>
             <p className="flex items-center gap-2">
-              <ShieldCheck size={14} className="text-primary" />
-              <span className="neon-text-green text-xs">CCNA CERTIFIED ✅</span>
+              <ShieldCheck size={14} className="text-secondary" />
+              <span className="text-secondary text-xs uppercase font-semibold">CCNA Training finished - Waiting for exam ⏳</span>
             </p>
           </div>
         </motion.div>
@@ -37,7 +37,7 @@ const AboutSection = () => (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ delay: 0.1 }}
           className="glass-card rounded-lg overflow-hidden"
         >
@@ -52,7 +52,8 @@ const AboutSection = () => (
             <p><span className="text-secondary">role:</span> <span className="text-foreground">Offensive Security Engineer</span></p>
             <p><span className="text-secondary">location:</span> <span className="text-foreground">India 🇮🇳</span></p>
             <p><span className="text-secondary">status:</span> <span className="neon-text-green">Active</span></p>
-            <p className="mt-2 text-muted-foreground">$ <span className="animate-pulse">_</span></p>
+            <p className="mt-2 text-muted-foreground italic"># type 'hack' if you dare...</p>
+            <p className="mt-1 text-muted-foreground">$ <span className="animate-pulse">_</span></p>
           </div>
         </motion.div>
       </div>

@@ -7,7 +7,7 @@ const ExperienceSection = () => (
       <motion.h2
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.3 }}
         className="text-3xl font-bold mb-10 glitch-hover neon-text-green"
       >
         {">"} Experience
@@ -16,7 +16,7 @@ const ExperienceSection = () => (
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.3 }}
         className="glass-card rounded-lg p-6 border-l-2 border-l-primary"
       >
         <div className="flex items-start gap-4">
@@ -24,11 +24,11 @@ const ExperienceSection = () => (
             <Briefcase size={18} className="text-primary" />
           </div>
           <div>
-            <h3 className="text-foreground font-semibold mb-1">AI Engineer Intern</h3>
+            <h3 className="text-foreground font-semibold mb-1">Software Development Intern</h3>
             <p className="text-secondary text-sm mb-3">ThisAI Origin</p>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Focused on AI-related engineering work, building intelligent systems and 
-              exploring the intersection of artificial intelligence with practical applications.
+              Focused on software development projects, building systems and 
+              contributing to full-stack applications. (Developer? Check the console).
             </p>
           </div>
         </div>

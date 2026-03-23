@@ -15,7 +15,6 @@ const projects = [
     stack: ["HTML", "Express.js", "EJS"],
     label: "PRODUCTION",
     github: "https://github.com/CodeName-R4M/Cypherix-using-express-js",
-    link: "https://cypherix.info",
   },
   {
     name: "Webb",
@@ -66,7 +65,7 @@ const ProjectsSection = () => (
       <motion.h2
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.3 }}
         className="text-3xl font-bold mb-10 glitch-hover neon-text-green"
       >
         {">"} Projects
@@ -78,7 +77,7 @@ const ProjectsSection = () => (
             key={p.name}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ delay: i * 0.05 }}
             whileHover={{ y: -5, rotateX: 2, rotateY: -2 }}
             style={{ perspective: 1000 }}

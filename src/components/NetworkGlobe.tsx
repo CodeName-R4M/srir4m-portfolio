@@ -1,10 +1,12 @@
 import { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
+import { useHacked } from "../context/HackedContext";
 
 const NetworkMesh = () => {
   const meshRef = useRef<THREE.Points>(null);
   const linesRef = useRef<THREE.LineSegments>(null);
+  const { isHacked } = useHacked();
 
   const { positions, linePositions } = useMemo(() => {
     const count = 200;
@@ -48,13 +50,23 @@ const NetworkMesh = () => {
         <bufferGeometry>
           <bufferAttribute attach="attributes-position" args={[positions, 3]} />
         </bufferGeometry>
-        <pointsMaterial size={0.04} color="#00ff88" transparent opacity={0.8} sizeAttenuation />
+        <pointsMaterial 
+          size={0.04} 
+          color={isHacked ? "#ff4444" : "#00ff88"} 
+          transparent 
+          opacity={0.8} 
+          sizeAttenuation 
+        />
       </points>
       <lineSegments ref={linesRef}>
         <bufferGeometry>
           <bufferAttribute attach="attributes-position" args={[linePositions, 3]} />
         </bufferGeometry>
-        <lineBasicMaterial color="#00d4ff" transparent opacity={0.15} />
+        <lineBasicMaterial 
+          color={isHacked ? "#ff4444" : "#00d4ff"} 
+          transparent 
+          opacity={isHacked ? 0.3 : 0.15} 
+        />
       </lineSegments>
     </group>
   );

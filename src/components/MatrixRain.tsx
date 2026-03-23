@@ -1,7 +1,9 @@
 import { useEffect, useRef } from "react";
+import { useHacked } from "../context/HackedContext";
 
 const MatrixRain = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const { isHacked } = useHacked();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -26,7 +28,7 @@ const MatrixRain = () => {
       ctx.fillStyle = "rgba(10, 10, 15, 0.05)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      ctx.fillStyle = "rgba(0, 255, 136, 0.15)";
+      ctx.fillStyle = isHacked ? "rgba(255, 68, 68, 0.2)" : "rgba(0, 255, 136, 0.15)";
       ctx.font = `${fontSize}px monospace`;
 
       for (let i = 0; i < drops.length; i++) {
@@ -45,7 +47,7 @@ const MatrixRain = () => {
       clearInterval(interval);
       window.removeEventListener("resize", resize);
     };
-  }, []);
+  }, [isHacked]);
 
   return (
     <canvas
