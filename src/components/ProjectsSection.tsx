@@ -3,46 +3,46 @@ import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
+    name: "Screentime Analyzer (RAW Focus)",
+    desc: "Offline-first digital wellness desktop app — tracks screen time, classifies app usage, and includes a local AI chat (via Ollama) with an auto-extracting memory bank. No cloud, no telemetry, fully local.",
+    stack: ["Electron", "React", "Vite", "TailwindCSS", "Ollama", "Recharts"],
+    label: "PRODUCTION",
+    github: "https://github.com/CodeName-R4M/screetime-analyzer",
+  },
+  {
+    name: "MedVault",
+    desc: "Blockchain-based medical records system — securely stores patient records on-chain and allows authorized viewing via QR code scan.",
+    stack: ["Blockchain", "Solidity", "Web3", "QR Code"],
+    label: "PRODUCTION",
+    github: "https://github.com/CodeName-R4M/med-vault",
+  },
+  {
     name: "Grab-n-Eat",
     desc: "Dynamic canteen management system with admin controls, image uploads, and real-time updates.",
     stack: ["MongoDB", "Express.js", "React", "Node.js"],
     label: "PRODUCTION",
-    github: "https://github.com/CodeName-R4M",
+    github: "https://github.com/CodeName-R4M/Grab-n-Eat",
+  },
+  {
+    name: "HAckademy Labs",
+    desc: "Learning platform built to host cybersecurity labs and hands-on practice modules.",
+    stack: ["Web App", "Labs Framework"],
+    label: "PRODUCTION",
+    github: "https://github.com/CodeName-R4M/HAckademy-Labs",
+  },
+  {
+    name: "Blockchain File Integrity Checker",
+    desc: "Tool that verifies file integrity using blockchain-based hashing to detect tampering or unauthorized changes.",
+    stack: ["Blockchain", "Python", "Solidity"],
+    label: "PRODUCTION",
+    github: "https://github.com/CodeName-R4M/blockchain-file-integrity-checker",
   },
   {
     name: "Cypherix",
-    desc: "Personal cybersecurity-themed web project with custom styling and dynamic content.",
+    desc: "Personal cybersecurity-themed web project for department symposium.",
     stack: ["HTML", "Express.js", "EJS"],
     label: "PRODUCTION",
-    github: "https://github.com/CodeName-R4M/Cypherix-using-express-js",
-  },
-  {
-    name: "Webb",
-    desc: "Internship web project showcasing front-end development skills.",
-    stack: ["HTML", "CSS"],
-    label: "LEARNING PROJECT",
-    github: "https://github.com/CodeName-R4M",
-  },
-  {
-    name: "MongoDB-Server",
-    desc: "Backend server project with MongoDB integration for data management.",
-    stack: ["JavaScript", "MongoDB"],
-    label: "LEARNING PROJECT",
-    github: "https://github.com/CodeName-R4M",
-  },
-  {
-    name: "SRM CTF Questions",
-    desc: "CTF challenge repository created for SRM college cybersecurity events.",
-    stack: ["CTF", "Security"],
-    label: "PRODUCTION",
-    github: "https://github.com/CodeName-R4M",
-  },
-  {
-    name: "Full-Stack Bootcamp",
-    desc: "Full-stack web development learning archive covering modern web technologies.",
-    stack: ["JavaScript", "React", "Node.js"],
-    label: "LEARNING PROJECT",
-    github: "https://github.com/CodeName-R4M",
+    github: "https://github.com/CodeName-R4M/cypherix.info",
   },
 ];
 
@@ -57,6 +57,18 @@ const stackColors: Record<string, string> = {
   JavaScript: "bg-yellow-500/15 text-yellow-400 border-yellow-500/30",
   CTF: "bg-destructive/15 text-destructive border-destructive/30",
   Security: "bg-destructive/15 text-destructive border-destructive/30",
+  Electron: "bg-blue-400/15 text-blue-300 border-blue-400/30",
+  Vite: "bg-purple-500/15 text-purple-300 border-purple-500/30",
+  TailwindCSS: "bg-cyan-500/15 text-cyan-300 border-cyan-500/30",
+  Ollama: "bg-pink-500/15 text-pink-300 border-pink-500/30",
+  Recharts: "bg-green-600/15 text-green-300 border-green-600/30",
+  Blockchain: "bg-indigo-500/15 text-indigo-300 border-indigo-500/30",
+  Solidity: "bg-violet-500/15 text-violet-300 border-violet-500/30",
+  Web3: "bg-cyan-600/15 text-cyan-300 border-cyan-600/30",
+  "QR Code": "bg-gray-500/15 text-gray-300 border-gray-500/30",
+  Python: "bg-blue-600/15 text-blue-300 border-blue-600/30",
+  "Web App": "bg-slate-500/15 text-slate-300 border-slate-500/30",
+  "Labs Framework": "bg-emerald-500/15 text-emerald-300 border-emerald-500/30",
 };
 
 const ProjectsSection = () => (
